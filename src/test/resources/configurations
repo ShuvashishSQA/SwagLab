@@ -1,0 +1,9 @@
+baseURL=https://www.saucedemo.com/v1/
+userName=  standard_user
+password = secret_sauce
+browser = Edge
+
+//checkout
+checkoutFirstName = John
+checkoutLastName = Doe
+checkoutZipCode = 1234
