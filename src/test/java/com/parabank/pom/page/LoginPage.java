@@ -15,8 +15,12 @@ public class LoginPage extends baseSwagTest {
     WebElement btnLogin;
 
     public LoginPage() {
+        try {
+            PageFactory.initElements(driver, this);
 
-        PageFactory.initElements(driver, this);
+        } catch (Exception e) {
+            System.out.println(e.getCause());
+        }
     }
 
     public LoginPage setUsername(String Username) {
@@ -38,6 +42,7 @@ public class LoginPage extends baseSwagTest {
         btnLogin.click();
         return new ProductPage();
     }
+
   /*  public LoginPage clickLogin() {
         btnLogin.isDisplayed();
         btnLogin.click();

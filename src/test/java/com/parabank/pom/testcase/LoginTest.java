@@ -13,11 +13,13 @@ public class LoginTest extends baseSwagTest {
         super();
     }
 
-    @Test
-    public void clickLogin(){
+
+    @Test(priority = 0)
+    public void clickLoginButton(){
         productPage = new LoginPage()
                 .setUsername(getUserName())
                 .setPassword(getPassword())
                 .clickLogin();
+
         }
 }

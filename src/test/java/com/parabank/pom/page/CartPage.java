@@ -13,7 +13,12 @@ public class CartPage extends baseSwagTest {
     @FindBy (xpath = "//div[text()=\"Your Cart\"]")
     WebElement elCartPageTitle;
     public CartPage(){
-        PageFactory.initElements(driver, this);
+        try {
+            PageFactory.initElements(driver, this);
+
+        } catch (Exception e) {
+            System.out.println(e.getCause());
+        }
     }
 
 

@@ -5,9 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 
 import java.io.FileInputStream;
@@ -38,8 +36,7 @@ public abstract class baseSwagTest {
         }
     }
 
-    @BeforeMethod
-    @Test
+    @BeforeTest
     public void getBrowserSetup() {
         String browserName = getBrowser();
         if (browserName.equals("Chrome")) {
@@ -87,8 +84,8 @@ public abstract class baseSwagTest {
         return properties.getProperty("checkoutZipCode");
     }
 
-    @AfterMethod
-    public void teardown() throws InterruptedException {
+    @AfterTest
+    public void tearDown() throws InterruptedException {
         Thread.sleep(5000);
         driver.quit();
     }

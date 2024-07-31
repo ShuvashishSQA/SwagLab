@@ -14,7 +14,12 @@ public class FinishPage extends baseSwagTest {
     WebElement elConfirmationText;      //THANK YOU FOR YOUR ORDER
 
     public FinishPage(){
-        PageFactory.initElements(driver,this);
+        try {
+            PageFactory.initElements(driver, this);
+
+        } catch (Exception e) {
+            System.out.println(e.getCause());
+        }
     }
     public FinishPage checkFinishPageHeader(){
         elFinishPageHeader.isDisplayed();

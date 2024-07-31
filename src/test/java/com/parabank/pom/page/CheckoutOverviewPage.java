@@ -13,7 +13,12 @@ public class CheckoutOverviewPage extends baseSwagTest {
     WebElement btnFinish;
 
     public CheckoutOverviewPage(){
-        PageFactory.initElements(driver,this);
+        try {
+            PageFactory.initElements(driver, this);
+
+        } catch (Exception e) {
+            System.out.println(e.getCause());
+        }
     }
 
     public CheckoutOverviewPage checkCheckoutOverviewPageHeader(){

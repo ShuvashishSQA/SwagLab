@@ -28,7 +28,12 @@ public class ProductPage extends baseSwagTest {
     @FindBy(xpath = "//button[text()=\"REMOVE\"]")
     WebElement btnRemove;
     public ProductPage() {
-        PageFactory.initElements(driver, this);
+        try {
+            PageFactory.initElements(driver, this);
+
+        } catch (Exception e) {
+            System.out.println(e.getCause());
+        }
     }
 
     //to check if the title appears correct --> Products
@@ -45,7 +50,6 @@ public class ProductPage extends baseSwagTest {
     }
 
     public ProductPage addToCart(){
-        elFirstItemAddToCart.isDisplayed();
         elFirstItemAddToCart.isDisplayed();
         elFirstItemAddToCart.click();
         return this;
@@ -68,7 +72,5 @@ public class ProductPage extends baseSwagTest {
         btnCart.click();
         return new CartPage();
     }
-
-
 
 }
