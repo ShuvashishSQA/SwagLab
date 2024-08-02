@@ -21,7 +21,6 @@ public class CartPage extends baseSwagTest {
         }
     }
 
-
     public CartPage checkCartPageTitle(){
         elCartPageTitle.isDisplayed();
         return this;

@@ -22,7 +22,7 @@ public class ProductPage extends baseSwagTest {
     @FindBy(xpath = "//a[@href=\"./cart.html\"]")
     WebElement btnCart;
 
-    @FindBy(className = "fa-layers-counter shopping_cart_badge")
+    @FindBy(xpath = "/html/body/div/div[2]/div[1]/div[2]/a/span")
     WebElement elCartBadge;  //should be updated according item added into cart
 
     @FindBy(xpath = "//button[text()=\"REMOVE\"]")
