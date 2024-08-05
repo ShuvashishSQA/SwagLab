@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="SwagLab Item Purchasing Test">
+    <test verbose="2" preserve-order="true" name="SwagLab">
+        <classes>
+            <class name="com.parabank.pom.testcase.LoginTest">
+            </class>
+            <class name="com.parabank.pom.testcase.ProductTest">
+            </class>
+            <class name="com.parabank.pom.testcase.CartTest">
+            </class>
+            <class name="com.parabank.pom.testcase.CheckoutTest">
+            </class>
+            <class name="com.parabank.pom.testcase.CheckoutOverviewTest">
+            </class>
+            <class name="com.parabank.pom.testcase.FinishTest">
+            </class>
+        </classes>
+    </test>
+</suite>
