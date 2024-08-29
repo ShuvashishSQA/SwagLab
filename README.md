@@ -7,7 +7,7 @@ From the PRODUCT page, product list will be sorted by Lowest to Higest price pri
 
 Finally, it will be confirmed by checking success page content and elements.
 
-Thanks and Regards,
-URL - https://www.saucedemo.com/v1/
-username - standard_user
+Thanks \
+URL - https://www.saucedemo.com/v1/ \
+username - standard_user\
 password - secret_sauce
