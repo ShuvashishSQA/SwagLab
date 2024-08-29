@@ -1,6 +1,6 @@
-package com.parabank.pom.page;
+package com.swaglab.pom.page;
 
-import com.parabank.pom.baseSwagTest;
+import com.swaglab.pom.baseSwagTest;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;

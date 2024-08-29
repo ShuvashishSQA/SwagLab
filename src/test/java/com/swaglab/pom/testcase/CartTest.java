@@ -1,8 +1,8 @@
-package com.parabank.pom.testcase;
+package com.swaglab.pom.testcase;
 
-import com.parabank.pom.baseSwagTest;
-import com.parabank.pom.page.CartPage;
-import com.parabank.pom.page.CheckoutPage;
+import com.swaglab.pom.baseSwagTest;
+import com.swaglab.pom.page.CartPage;
+import com.swaglab.pom.page.CheckoutPage;
 import org.testng.annotations.Test;
 
 public class CartTest extends baseSwagTest {

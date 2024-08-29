@@ -1,4 +1,4 @@
-package com.parabank.pom;
+package com.swaglab.pom;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
@@ -15,7 +15,6 @@ import java.time.Duration;
 import java.util.Properties;
 
 public abstract class baseSwagTest {
-
     private Properties properties;
 
     public static WebDriver driver;

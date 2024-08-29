@@ -1,8 +1,8 @@
-package com.parabank.pom.testcase;
+package com.swaglab.pom.testcase;
 
-import com.parabank.pom.baseSwagTest;
-import com.parabank.pom.page.ProductPage;
-import com.parabank.pom.page.LoginPage;
+import com.swaglab.pom.baseSwagTest;
+import com.swaglab.pom.page.ProductPage;
+import com.swaglab.pom.page.LoginPage;
 import org.testng.annotations.Test;
 
 public class LoginTest extends baseSwagTest {

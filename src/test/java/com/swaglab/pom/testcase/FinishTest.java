@@ -1,7 +1,7 @@
-package com.parabank.pom.testcase;
+package com.swaglab.pom.testcase;
 
-import com.parabank.pom.baseSwagTest;
-import com.parabank.pom.page.FinishPage;
+import com.swaglab.pom.baseSwagTest;
+import com.swaglab.pom.page.FinishPage;
 import org.testng.annotations.Test;
 
 public class FinishTest extends baseSwagTest {
