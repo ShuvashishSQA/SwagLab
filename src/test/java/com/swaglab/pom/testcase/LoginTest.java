@@ -17,8 +17,8 @@ public class LoginTest extends baseSwagTest {
     @Test(priority = 0)
     public void clickLoginButton(){
         productPage = new LoginPage()
-                .setUsername(getUserName())
-                .setPassword(getPassword())
+                .collectAndSetUsername()
+                .collectAndSetPassword()
                 .clickLogin();
 
         }

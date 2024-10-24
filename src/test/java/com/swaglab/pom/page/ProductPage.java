@@ -19,6 +19,9 @@ public class ProductPage extends baseSwagTest {
     @FindBy(xpath = "//div[@class = 'inventory_item'][1]//button[text()='ADD TO CART']")
     WebElement elFirstItemAddToCart;
 
+    @FindBy(xpath = "//div[@class = 'inventory_item'][1]")
+    WebElement elFirstItemOfTheList;
+
     @FindBy(xpath = "//a[@href=\"./cart.html\"]")
     WebElement btnCart;
 
@@ -49,7 +52,13 @@ public class ProductPage extends baseSwagTest {
         return this;
     }
 
-    public ProductPage addToCart(){
+    public ProductDetailPage checkProductDetails(){
+        elFirstItemOfTheList.isDisplayed();
+        elFirstItemOfTheList.click();
+        return new ProductDetailPage();
+    }
+
+/*    public ProductPage addToCart(){
         elFirstItemAddToCart.isDisplayed();
         elFirstItemAddToCart.click();
         return this;
@@ -71,6 +80,6 @@ public class ProductPage extends baseSwagTest {
         btnCart.isDisplayed();
         btnCart.click();
         return new CartPage();
-    }
+    }*/
 
 }

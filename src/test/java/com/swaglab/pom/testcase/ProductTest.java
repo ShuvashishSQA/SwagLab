@@ -23,5 +23,4 @@ public class ProductTest extends baseSwagTest {
                 .addToCart()                //Add the same item again
                 .clickCart();               //Finally, click into the cart icon, CartPage will appear
     }
-
 }
