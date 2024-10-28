@@ -5,35 +5,27 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import static jdk.internal.agent.Agent.getText;
+public class ProductToProductDetailPage extends baseSwagTest {
 
-public class ProductDetailPage extends baseSwagTest {
-
-    @FindBy(className = "btn_primary btn_inventory" )
+    @FindBy(xpath = "//button[contains(text(),'ADD TO CART')]")
     WebElement buttonAddToCart;
-    @FindBy(className = "btn_secondary btn_inventory" )
+    @FindBy(xpath = "//button[contains(text(),'REMOVE')]" )
     WebElement buttonRemove;
     @FindBy(className = "inventory_details_back_button" )
     WebElement buttonBack;
 
-    @FindBy(className = "fa-layers-counter shopping_cart_badge")
-    WebElement elCartBadge;
 
-    public ProductDetailPage(){
+    public ProductToProductDetailPage(){
         PageFactory.initElements(driver,this);
     }
 
-    public ProductDetailPage clickAddToCart(){
+    public ProductToProductDetailPage clickAddToCart(){
         buttonAddToCart.isDisplayed();
         buttonAddToCart.click();
         return this;
     }
-    public boolean verifyCartBadge(){
-        String cartItemCount = elCartBadge.getText();//equals("1");
-        return cartItemCount.equals("1");
-    }
 
-    public ProductDetailPage clickRemove(){
+    public ProductToProductDetailPage clickRemove(){
         buttonRemove.isDisplayed();
         buttonRemove.click();
         return this;

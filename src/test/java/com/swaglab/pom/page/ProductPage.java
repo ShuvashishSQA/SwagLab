@@ -19,17 +19,15 @@ public class ProductPage extends baseSwagTest {
     @FindBy(xpath = "//div[@class = 'inventory_item'][1]//button[text()='ADD TO CART']")
     WebElement elFirstItemAddToCart;
 
-    @FindBy(xpath = "//div[@class = 'inventory_item'][1]")
+    @FindBy(xpath = "(//div[@class='inventory_list']//div[@class='inventory_item'])[1]//div[@class='inventory_item_name']")
     WebElement elFirstItemOfTheList;
 
     @FindBy(xpath = "//a[@href=\"./cart.html\"]")
     WebElement btnCart;
 
-    @FindBy(xpath = "/html/body/div/div[2]/div[1]/div[2]/a/span")
-    WebElement elCartBadge;  //should be updated according item added into cart
-
     @FindBy(xpath = "//button[text()=\"REMOVE\"]")
     WebElement btnRemove;
+
     public ProductPage() {
         try {
             PageFactory.initElements(driver, this);
@@ -52,20 +50,15 @@ public class ProductPage extends baseSwagTest {
         return this;
     }
 
-    public ProductDetailPage checkProductDetails(){
+    public ProductToProductDetailPage checkProductDetails(){
         elFirstItemOfTheList.isDisplayed();
         elFirstItemOfTheList.click();
-        return new ProductDetailPage();
+        return new ProductToProductDetailPage();
     }
 
-/*    public ProductPage addToCart(){
+    public ProductPage addToCart(){
         elFirstItemAddToCart.isDisplayed();
         elFirstItemAddToCart.click();
-        return this;
-    }
-
-    public ProductPage verifyCartBadge(){
-        System.out.println(elCartBadge.getText());//equals("1");
         return this;
     }
 
@@ -80,6 +73,6 @@ public class ProductPage extends baseSwagTest {
         btnCart.isDisplayed();
         btnCart.click();
         return new CartPage();
-    }*/
+    }
 
 }

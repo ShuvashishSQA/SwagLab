@@ -5,10 +5,10 @@ import com.swaglab.pom.page.CheckoutOverviewPage;
 import com.swaglab.pom.page.CheckoutPage;
 import org.testng.annotations.Test;
 
-public class CheckoutTest extends baseSwagTest {
+public class TC_06_CheckoutTest extends baseSwagTest {
 
     CheckoutOverviewPage checkoutOverviewPage ;
-    public CheckoutTest(){
+    public TC_06_CheckoutTest(){
         super();
     }
 

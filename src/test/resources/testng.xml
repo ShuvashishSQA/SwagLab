@@ -3,17 +3,21 @@
 <suite name="SwagLab Item Purchasing Test">
     <test verbose="2" preserve-order="true" name="SwagLab">
         <classes>
-            <class name="com.swaglab.pom.testcase.LoginTest">
+            <class name="com.swaglab.pom.testcase.TC_01_LoginTest">
             </class>
-            <class name="com.swaglab.pom.testcase.ProductTest">
+            <class name="com.swaglab.pom.testcase.TC_02_ProductTest">
             </class>
-            <class name="com.swaglab.pom.testcase.CartTest">
+            <class name="com.swaglab.pom.testcase.TC_03_ProductToProductDetailTest">
             </class>
-            <class name="com.swaglab.pom.testcase.CheckoutTest">
+            <class name="com.swaglab.pom.testcase.TC_04_ProductToCartTest">
             </class>
-            <class name="com.swaglab.pom.testcase.CheckoutOverviewTest">
+            <class name="com.swaglab.pom.testcase.TC_05_CartTest">
             </class>
-            <class name="com.swaglab.pom.testcase.FinishTest">
+            <class name="com.swaglab.pom.testcase.TC_06_CheckoutTest">
+            </class>
+            <class name="com.swaglab.pom.testcase.TC_07_CheckoutOverviewTest">
+            </class>
+            <class name="com.swaglab.pom.testcase.TC_08_FinishTest">
             </class>
         </classes>
     </test>

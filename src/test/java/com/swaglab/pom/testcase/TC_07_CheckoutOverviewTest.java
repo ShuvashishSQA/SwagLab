@@ -5,11 +5,11 @@ import com.swaglab.pom.page.CheckoutOverviewPage;
 import com.swaglab.pom.page.FinishPage;
 import org.testng.annotations.Test;
 
-public class CheckoutOverviewTest extends baseSwagTest {
+public class TC_07_CheckoutOverviewTest extends baseSwagTest {
 
 FinishPage finishPage = new FinishPage();
 
-    public CheckoutOverviewTest(){
+    public TC_07_CheckoutOverviewTest(){
         super();
     }
 
