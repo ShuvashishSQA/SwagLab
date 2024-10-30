@@ -1,6 +1,8 @@
 package com.swaglab.pom;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -8,14 +10,17 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.*;
 
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.time.Duration;
+import java.util.Date;
 import java.util.Properties;
 
 public abstract class baseSwagTest {
-    private Properties properties;
+    final Properties properties;
 
     public static WebDriver driver;
 
@@ -63,12 +68,7 @@ public abstract class baseSwagTest {
     public String getBaseURL() {
         return properties.getProperty("baseURL");
     }
-    public String getUserName() {
-        return properties.getProperty("userName");
-    }
-    public String getPassword() {
-        return properties.getProperty("password");
-    }
+
     public String getBrowser() {
         return properties.getProperty("browser");
     }
@@ -85,6 +85,7 @@ public abstract class baseSwagTest {
 
     @AfterTest
     public void tearDown() throws InterruptedException {
+
         Thread.sleep(5000);
         driver.quit();
     }
