@@ -14,7 +14,7 @@ public class TC_04_ProductToCartTest extends baseSwagTest {
 
     @Test
     public void proceedToCart(){
-        new ProductPage()        //Product Page instantiating
+        new ProductPage()                   //Product Page instantiating
                 .checkTitle()               //To check Product Page Title
                 .addToCart()                //To add the lowest price item into cart
                 .clickCart();               //Finally, click into the cart icon, CartPage will appear

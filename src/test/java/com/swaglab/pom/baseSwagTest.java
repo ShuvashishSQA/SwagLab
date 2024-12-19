@@ -1,12 +1,14 @@
 package com.swaglab.pom;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.ITestResult;
 import org.testng.annotations.*;
 
 
@@ -64,6 +66,16 @@ public abstract class baseSwagTest {
         driver.manage().window().maximize();
     }
 
+    public void takeScreenshot(String testName) {
+        File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+        try {
+            File destination = new File("C:\\Users\\Mir IT\\IdeaProjects\\SwagLab\\Screenshots" + testName + ".png");
+            FileUtils.copyFile(screenshot, destination);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 
     public String getBaseURL() {
         return properties.getProperty("baseURL");
@@ -83,10 +95,21 @@ public abstract class baseSwagTest {
         return properties.getProperty("checkoutZipCode");
     }
 
-    @AfterTest
-    public void tearDown() throws InterruptedException {
 
-        Thread.sleep(5000);
+    public void captureScreenshotOnFailure(ITestResult result) {
+        if (result.getStatus() == ITestResult.FAILURE || result.getStatus() == ITestResult.SUCCESS) {
+            takeScreenshot(result.getName());
+        }
+    }
+    @AfterMethod
+    public void tearDown(ITestResult result) throws InterruptedException {
+        captureScreenshotOnFailure(result);
+        Thread.sleep(3000);
+        //driver.quit();
+    }
+
+    @AfterTest
+    public void closeBrowser(ITestResult result) throws InterruptedException {
         driver.quit();
     }
 
