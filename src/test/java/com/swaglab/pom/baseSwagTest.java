@@ -105,12 +105,12 @@ public abstract class baseSwagTest {
     public void tearDown(ITestResult result) throws InterruptedException {
         captureScreenshotOnFailure(result);
         Thread.sleep(3000);
-        //driver.quit();
     }
 
     @AfterTest
-    public void closeBrowser(ITestResult result) throws InterruptedException {
-        driver.quit();
+    public void closeBrowser() throws InterruptedException {
+        if(driver != null)
+            driver.quit();
     }
 
 }
