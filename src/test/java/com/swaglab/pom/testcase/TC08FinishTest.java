@@ -4,8 +4,8 @@ import com.swaglab.pom.baseSwagTest;
 import com.swaglab.pom.page.FinishPage;
 import org.testng.annotations.Test;
 
-public class TC_08_FinishTest extends baseSwagTest {
-    public TC_08_FinishTest(){
+public class TC08FinishTest extends baseSwagTest {
+    public TC08FinishTest(){
         super();
     }
 

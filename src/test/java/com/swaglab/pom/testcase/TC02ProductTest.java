@@ -5,10 +5,10 @@ import com.swaglab.pom.page.CartPage;
 import com.swaglab.pom.page.ProductPage;
 import org.testng.annotations.Test;
 
-public class TC_02_ProductTest extends baseSwagTest {
+public class TC02ProductTest extends baseSwagTest {
 
     public CartPage cartPage;
-    TC_02_ProductTest(){
+    TC02ProductTest(){
         super();
     }
 

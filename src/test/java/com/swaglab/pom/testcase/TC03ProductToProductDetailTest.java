@@ -4,9 +4,9 @@ import com.swaglab.pom.baseSwagTest;
 import com.swaglab.pom.page.ProductToProductDetailPage;
 import org.testng.annotations.Test;
 
-public class TC_03_ProductToProductDetailTest extends baseSwagTest {
+public class TC03ProductToProductDetailTest extends baseSwagTest {
 
-    TC_03_ProductToProductDetailTest(){
+    TC03ProductToProductDetailTest(){
         super();
     }
 

@@ -5,11 +5,11 @@ import com.swaglab.pom.page.ProductPage;
 import com.swaglab.pom.page.LoginPage;
 import org.testng.annotations.Test;
 
-public class TC_01_LoginTest extends baseSwagTest {
+public class TC01LoginTest extends baseSwagTest {
 
     ProductPage productPage;
 
-    public TC_01_LoginTest(){
+    public TC01LoginTest(){
         super();
     }
 
@@ -20,6 +20,5 @@ public class TC_01_LoginTest extends baseSwagTest {
                 .collectAndSetUsername()
                 .collectAndSetPassword()
                 .clickLogin();
-
         }
 }

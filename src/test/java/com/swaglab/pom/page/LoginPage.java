@@ -24,7 +24,6 @@ public class LoginPage extends baseSwagTest {
         }
     }
 
-
     public LoginPage collectAndSetUsername() {
         // Locate the 'Accepted usernames are' section
         WebElement userSection = driver.findElement(By.id("login_credentials"));

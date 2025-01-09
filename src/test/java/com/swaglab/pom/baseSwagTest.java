@@ -1,5 +1,11 @@
 package com.swaglab.pom;
 
+//ExtendReport dependencies
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.reporter.ExtentSparkReporter;
+
+
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
@@ -11,19 +17,18 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
 
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.text.SimpleDateFormat;
 import java.time.Duration;
-import java.util.Date;
 import java.util.Properties;
 
 public abstract class baseSwagTest {
-    final Properties properties;
+    protected static ExtentReports extent;
+    protected static ExtentTest test;
 
+    final Properties properties;
     public static WebDriver driver;
 
     public baseSwagTest() {
@@ -42,6 +47,7 @@ public abstract class baseSwagTest {
         }
     }
 
+
     @BeforeTest
     public void getBrowserSetup() {
         String browserName = getBrowser();
@@ -56,21 +62,24 @@ public abstract class baseSwagTest {
             driver = new EdgeDriver();
         }
 
-        /*System.out.println(getPassword());
-        System.out.println(getBaseURL());
-        System.out.println(getBrowser());
-        System.out.println(driver);*/
-
         driver.get(getBaseURL());
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
         driver.manage().window().maximize();
     }
 
     public void takeScreenshot(String testName) {
-        File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+
         try {
-            File destination = new File("C:\\Users\\Mir IT\\IdeaProjects\\SwagLab\\Screenshots" + testName + ".png");
+            File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+            // Define the path for the screenshot folder
+            File destination = new File("Screenshots/" + testName + ".png");
+
+            // Copy the screenshot to the destination path
             FileUtils.copyFile(screenshot, destination);
+
+            if (!destination.exists()) {
+                destination.mkdirs();  // Create the directory if it does not exist
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -96,15 +105,15 @@ public abstract class baseSwagTest {
     }
 
 
-    public void captureScreenshotOnFailure(ITestResult result) {
+    public void captureScreenshot(ITestResult result) {
         if (result.getStatus() == ITestResult.FAILURE || result.getStatus() == ITestResult.SUCCESS) {
             takeScreenshot(result.getName());
         }
     }
+
     @AfterMethod
     public void tearDown(ITestResult result) throws InterruptedException {
-        captureScreenshotOnFailure(result);
-        Thread.sleep(3000);
+        captureScreenshot(result);
     }
 
     @AfterTest
